@@ -1,0 +1,103 @@
+.removedecoration{
+    text-decoration: none;
+}
+.header_ul{
+    display: flex;
+}
+.header_ul > li{
+    list-style-type:none;
+    margin-right: 20px;
+    font-size: 20px;
+}
+.Header,.Footer{
+    text-align: center;
+    width: 100%;
+    background-color:rgb(255, 200, 127);
+}
+.NavBar{
+    width: 100%;
+    background-color: rgb(207, 207, 207);
+}
+.Home_ContentWrapper{
+    padding: 0px 20px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.post_div{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    width: 100%;
+    padding-left: 60px;
+}
+
+.post{
+    width: 30%;
+    border: 2px solid greenyellow;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.header_navbar{
+    
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2px 20px;
+}
+
+.searchinput{
+    width: 400px;
+    height: 40px;
+    border: none;
+    outline: none;
+}
+.trashdiv{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.App
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(254, 255, 175);
+}
+
+.AllPage_heightmin{
+    min-height: 68vh;
+}
+
+.header,.footer{
+    padding: 15px;
+}
+.header_ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn-size{
+    width: 400px;
+    margin-top: 20px;
+}
+.NewPost_ContentWrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.feed{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px
+}
+.Home{
+    width: 100%;
+}
