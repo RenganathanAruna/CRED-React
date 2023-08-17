@@ -1,9 +1,8 @@
 import './App.css';
-import {Link,Routes,Route, useNavigate} from 'react-router-dom';
+import {Routes,Route, useNavigate} from 'react-router-dom';
 import Home from './Body/Home';
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
-import Post from './Body/Post';
 import About from './Body/About';
 import NewPost from './Body/NewPost';
 import Error from './Body/Error';
