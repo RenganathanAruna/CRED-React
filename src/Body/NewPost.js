@@ -3,7 +3,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {useParams} from 'react-router-dom';
 import { useState } from 'react';
 import NavBar from '../Header/NavBar';
-
+import { useContext } from 'react';
+import UserContext from '../UserContext';
+import { FaUserCircle } from 'react-icons/fa';
 const NewPost = ({handelsubmitnewpost,title,settitle,newpost,setnewpost,post,handelsubmitupdatepost}) => {
   
   const { id } = useParams();
@@ -15,10 +17,16 @@ const NewPost = ({handelsubmitnewpost,title,settitle,newpost,setnewpost,post,han
   const [updatebody,setupdatebody] = useState
   (filteredPost ? filteredPost.body : '');
 
+  const userdetails = useContext(UserContext);
+
   return (
 
     <div className=' AllPage_heightmin'>
       <NavBar/>
+      <div className='LoginUser'>
+        <h3>{userdetails.userDetails.Name}</h3>
+        <FaUserCircle className='usericon'/>
+      </div> 
       <div className='NewPost_ContentWrapper'>
         <div className='NewPost_form_wrapper'>
           {

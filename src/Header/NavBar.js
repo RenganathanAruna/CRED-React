@@ -38,7 +38,7 @@ const NavBar = ({search,setSearch}) => {
                 {!PageName &&
                     <div className='Navbar_list'>
                         <ul className='Navbar_ul'>
-                            <li><Link to="/" className='removedecoration'>Home</Link></li>
+                            <li><Link to='/Home' className='removedecoration'>Home</Link></li>
                             <li><Link to="/NewPost" className='removedecoration'>New Post</Link></li>
                             <li><Link to="/About" className='removedecoration'>About</Link></li>
                         </ul>

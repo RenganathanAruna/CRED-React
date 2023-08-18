@@ -6,8 +6,10 @@ import Footer from './Footer/Footer';
 import About from './Body/About';
 import NewPost from './Body/NewPost';
 import Error from './Body/Error';
-import { useEffect, useState } from 'react';
+import UserDetails from './Body/UserDetails';
+import { useContext, useEffect, useState } from 'react';
 import {format} from 'date-fns';
+import UserContext from './UserContext';
 
 function App() {
 
@@ -20,6 +22,11 @@ function App() {
   const [newpost,setnewpost]=useState('');
 
   const [searchresult,setsearchresult]=useState('');
+
+  const [userDetails,setUserDetails]=useState({
+    Name: '',
+    Email: ''
+  });
 
   const navigate = useNavigate();
 
@@ -40,7 +47,7 @@ function App() {
     setPost(allPosts);
     settitle('');
     setnewpost('');
-    navigate('/');
+    navigate('/Home');
   }
 
   const handeldeletepost = (deletepostid)=>{
@@ -54,7 +61,13 @@ function App() {
     post[id-1].body=updatedpost;
     post[id-1].title=updatedtitle;
     post[id-1].datetime=datetime;
-    navigate('/');
+    navigate('/Home');
+  }
+
+
+  const handelsumbituserdeatils = (e) =>{
+      e.preventDefault();
+      navigate('/Home');
   }
 
   useEffect(()=>{
@@ -74,56 +87,61 @@ function App() {
   },[post,search]);
 
   return (
-    <div className="App">
+      <div className="App">
 
-      <div className='Header'>
-        <Header title="Welcome To Dom's Social Media App"/>
-      </div>
+        <div className='Header'>
+          <Header title="Welcome To Dom's Social Media App"/>
+        </div>
+        <UserContext.Provider value={{ userDetails, setUserDetails }}>
+          <Routes>
 
-      <Routes>
-
-          <Route path='/' element={
-              <Home post={searchresult} 
-              handeldeletepost={handeldeletepost}
-              search={search}
-              setSearch={setSearch}
+              <Route path='/' element={<UserDetails
+                  userDetails={userDetails}
+                  setUserDetails={setUserDetails}
+                  handelsumbituserdeatils={handelsumbituserdeatils}
+              />}
               />
-              } 
-          />
 
-          <Route path='About' element ={<About/>} />
+              <Route path='/Home' element={
+                  <Home post={searchresult} 
+                  handeldeletepost={handeldeletepost}
+                  search={search}
+                  setSearch={setSearch}
+                  />
+                  } 
+              />
 
-          <Route path='NewPost'>
+              <Route path='About' element ={<About/>} />
 
-              <Route index
-              element ={<NewPost 
-              handelsubmitnewpost={handelsubmitnewpost}
-              title={title}
-              settitle={settitle}
-              newpost={newpost}
-              setnewpost={setnewpost}
-              post={post}/>
-              } />
+              <Route path='NewPost'>
 
-              <Route path=':id' element={<NewPost 
-                post={post}
-                handelsubmitupdatepost={handelsubmitupdatepost}/>
-              }/>
+                  <Route index
+                  element ={<NewPost 
+                  handelsubmitnewpost={handelsubmitnewpost}
+                  title={title}
+                  settitle={settitle}
+                  newpost={newpost}
+                  setnewpost={setnewpost}
+                  post={post}/>
+                  } />
 
-          </Route>
+                  <Route path=':id' element={<NewPost 
+                    post={post}
+                    handelsubmitupdatepost={handelsubmitupdatepost}/>
+                  }/>
 
-          <Route path='*' element={<Error/>} />
+              </Route>
 
-      </Routes>
+              <Route path='*' element={<Error/>} />
 
-      <div className='Footer'>
-        <Footer/>
+          </Routes>
+        </UserContext.Provider>
+
+        <div className='Footer'>
+          <Footer/>
+        </div>
       </div>
-
-      
-    </div>
   );
 }
-
 
 export default App;

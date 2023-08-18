@@ -1,6 +1,10 @@
 .removedecoration{
     text-decoration: none;
 }
+.AllPage_heightmin{
+    min-height: 77vh;
+    width: 100%;
+}
 .NavBar{
     width: 100%;
     background-color: rgb(207, 207, 207);
@@ -79,13 +83,6 @@
     background-color: rgb(254, 255, 175);
 }
 
-.AllPage_heightmin{
-    min-height: 77vh;
-    width: 100%;
-}
-
-
-
 .btn-size{
     width: 400px;
     margin-top: 20px;
@@ -105,4 +102,22 @@
 }
 .Home{
     width: 100%;
+}
+
+.UserDetails_ContentWrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 68vh;
+}
+.LoginUser{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.usericon{
+    font-size: 25px;
+    color: black;
 }
