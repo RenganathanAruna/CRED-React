@@ -7,7 +7,7 @@ import About from './Body/About';
 import NewPost from './Body/NewPost';
 import Error from './Body/Error';
 import UserDetails from './Body/UserDetails';
-import { useContext, useEffect, useState } from 'react';
+import {useEffect, useState } from 'react';
 import {format} from 'date-fns';
 import UserContext from './UserContext';
 
