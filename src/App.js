@@ -7,7 +7,6 @@ import About from './Body/About';
 import NewPost from './Body/NewPost';
 import Error from './Body/Error';
 import { useEffect, useState } from 'react';
-import NavSearch from './Header/NavSearch';
 import {format} from 'date-fns';
 
 function App() {
@@ -81,16 +80,16 @@ function App() {
         <Header title="Welcome To Dom's Social Media App"/>
       </div>
 
-      <div className='NavBar'>
-          <NavSearch 
-            search={search}
-            setSearch={setSearch}/>
-      </div>
-
       <Routes>
 
-          <Route path='/' element={<Home post={searchresult} 
-          handeldeletepost={handeldeletepost}/>} />
+          <Route path='/' element={
+              <Home post={searchresult} 
+              handeldeletepost={handeldeletepost}
+              search={search}
+              setSearch={setSearch}
+              />
+              } 
+          />
 
           <Route path='About' element ={<About/>} />
 
@@ -112,6 +111,7 @@ function App() {
               }/>
 
           </Route>
+
           <Route path='*' element={<Error/>} />
 
       </Routes>
