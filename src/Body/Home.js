@@ -6,8 +6,7 @@ import UserContext from '../UserContext';
 import { FaUserCircle } from 'react-icons/fa';
 const Home = ({post,handeldeletepost,search,setSearch}) => {
   const userdetails = useContext(UserContext);
-  console.log(userdetails)
-  console.log(userdetails.userDetails.Name)
+  
   return (
     
     <div className='AllPage_heightmin'>

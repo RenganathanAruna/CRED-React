@@ -6,6 +6,7 @@ import { FaUserCircle } from 'react-icons/fa';
 
 const About = () => {
   const userdetails = useContext(UserContext);
+  
   return (
     <div className='AllPage_heightmin'>
       <NavBar/>

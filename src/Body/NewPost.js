@@ -6,6 +6,7 @@ import NavBar from '../Header/NavBar';
 import { useContext } from 'react';
 import UserContext from '../UserContext';
 import { FaUserCircle } from 'react-icons/fa';
+
 const NewPost = ({handelsubmitnewpost,title,settitle,newpost,setnewpost,post,handelsubmitupdatepost}) => {
   
   const { id } = useParams();
