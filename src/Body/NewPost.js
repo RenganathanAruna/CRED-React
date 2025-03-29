@@ -12,11 +12,10 @@ const NewPost = ({handelsubmitnewpost,title,settitle,newpost,setnewpost,post,han
   const { id } = useParams();
 
   const filteredPost = post.find(p => (p.id).toString() === id);
+  console.log(filteredPost);
 
-  const [updatetitle,setupdatetitle] = useState
-  (filteredPost ? filteredPost.title : '');
-  const [updatebody,setupdatebody] = useState
-  (filteredPost ? filteredPost.body : '');
+  const [updatetitle,setupdatetitle] = useState(filteredPost ? filteredPost.title : '');
+  const [updatebody,setupdatebody] = useState(filteredPost ? filteredPost.body : '');
 
   const userdetails = useContext(UserContext);
 
@@ -110,6 +109,5 @@ const NewPost = ({handelsubmitnewpost,title,settitle,newpost,setnewpost,post,han
     </div>
   )
 }
-
 
 export default NewPost
